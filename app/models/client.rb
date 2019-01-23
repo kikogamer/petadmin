@@ -3,6 +3,7 @@ class Client < ApplicationRecord
 
   has_many :campaign_clients, dependent: :destroy
   has_many :campaigns, through: :campaign_clients
+  has_many :client_addresses, dependent: :destroy
 
   validates :phone, presence: true
   validates :email,

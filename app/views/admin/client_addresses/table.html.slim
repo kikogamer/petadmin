@@ -1,0 +1,7 @@
+== render 'fae/shared/nested_table',
+  assoc: :client_addresses,
+  parent_item: @item.client,
+  cols: [:street, :city, :state, :Zip],
+  title: 'Addresses',
+  ordered: true,
+  edit_column: true
