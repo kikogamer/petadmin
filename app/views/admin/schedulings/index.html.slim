@@ -16,7 +16,7 @@ main.content
       - if @items.present?
         - @items.each do |item|
           tr id=fae_sort_id(item)
-            td = link_to item.fae_display_field, edit_admin_service_scheduling_path(item)
+            td = link_to item.fae_display_field, edit_admin_scheduling_path(item)
             td = fae_date_format item.date
             td = item.client.name
             td = item.status

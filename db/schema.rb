@@ -217,6 +217,17 @@ ActiveRecord::Schema.define(version: 20190125003600) do
     t.index ["supplier_id"], name: "index_products_on_supplier_id", using: :btree
   end
 
+  create_table "schedulings", force: :cascade do |t|
+    t.date     "date"
+    t.time     "time"
+    t.integer  "status"
+    t.decimal  "total"
+    t.integer  "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_schedulings_on_client_id", using: :btree
+  end
+
   create_table "sell_products", force: :cascade do |t|
     t.integer  "product_id"
     t.integer  "sell_id"
@@ -248,17 +259,6 @@ ActiveRecord::Schema.define(version: 20190125003600) do
     t.index ["discount_id"], name: "index_sells_on_discount_id", using: :btree
   end
 
-  create_table "service_schedulings", force: :cascade do |t|
-    t.date     "date"
-    t.time     "time"
-    t.integer  "status"
-    t.decimal  "total"
-    t.integer  "client_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["client_id"], name: "index_service_schedulings_on_client_id", using: :btree
-  end
-
   create_table "services", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -281,11 +281,11 @@ ActiveRecord::Schema.define(version: 20190125003600) do
   add_foreign_key "campaign_clients", "clients"
   add_foreign_key "client_addresses", "clients"
   add_foreign_key "products", "suppliers"
+  add_foreign_key "schedulings", "clients"
   add_foreign_key "sell_products", "products"
   add_foreign_key "sell_products", "sells"
   add_foreign_key "sell_services", "sells"
   add_foreign_key "sell_services", "services"
   add_foreign_key "sells", "clients"
   add_foreign_key "sells", "discounts"
-  add_foreign_key "service_schedulings", "clients"
 end

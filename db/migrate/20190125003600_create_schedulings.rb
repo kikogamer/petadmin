@@ -1,6 +1,6 @@
-class CreateServiceSchedulings < ActiveRecord::Migration[5.0]
+class CreateSchedulings < ActiveRecord::Migration[5.0]
   def change
-    create_table :service_schedulings do |t|
+    create_table :schedulings do |t|
       t.date :date
       t.time :time
       t.integer :status

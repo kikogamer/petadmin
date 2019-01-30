@@ -1,4 +1,4 @@
-class ServiceScheduling < ApplicationRecord
+class Scheduling < ApplicationRecord
   include Fae::BaseModelConcern
   enum status: { pending: 0, finished: 1, canceled: 2 }
 
