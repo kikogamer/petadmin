@@ -4,6 +4,7 @@
 
   main.content
     = fae_association f, :client
+    = fae_association f, :services
     = fae_datepicker f, :date
     = fae_input f, :time
     = fae_pulldown f, :status, size: 'long', collection: Scheduling.statuses.to_a, selected: Scheduling.statuses[@item.status]
