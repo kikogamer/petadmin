@@ -32,10 +32,12 @@ module Fae
           item('Services', path: admin_services_path),
           item('Products', path: admin_products_path),
           item('Sells', path: admin_sells_path),
+          item('Schedules', path: admin_service_schedulings_path)
         ]),
         item('Marketing', subitems: [
           item('Campaigns', path: admin_campaigns_path)
         ]),
+        item('+ Schedule Service', path: '/admin/service_schedulings/new'),
         item('+ Sell', path: '/admin/sells/new')
       ]
     end

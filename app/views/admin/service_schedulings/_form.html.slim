@@ -1,0 +1,9 @@
+= simple_form_for(['admin', @item]) do |f|
+  == render 'fae/shared/form_header', header: @klass_name
+  == render 'fae/shared/errors'
+
+  main.content
+    = fae_association f, :client
+    = fae_datepicker f, :date
+    = fae_input f, :time
+    = fae_pulldown f, :status, size: 'long', collection: ServiceScheduling.statuses.to_a, selected: ServiceScheduling.statuses[@item.status]

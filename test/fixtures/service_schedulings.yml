@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2019-01-25
+  time: 2019-01-25 00:36:00
+  status: 1
+  total: 9.99
+  client: one
+
+two:
+  date: 2019-01-25
+  time: 2019-01-25 00:36:00
+  status: 1
+  total: 9.99
+  client: two
