@@ -10,6 +10,7 @@ class Scheduling < ApplicationRecord
   has_many :services, through: :scheduling_services
 
   before_save :set_total
+  after_save :send_email
 
   def fae_display_field
     id  
@@ -20,6 +21,12 @@ class Scheduling < ApplicationRecord
   end
 
   private
+
+  def send_email
+    if self.pending?
+      SchedulingJob.perform_later self, "New Scheduling Service"
+    end
+  end
 
   def set_total
     total = 0
