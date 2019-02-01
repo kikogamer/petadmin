@@ -5,7 +5,7 @@ class Scheduling < ApplicationRecord
   validates :client, presence: true
 
   belongs_to :client
-
+  
   has_many :scheduling_services, dependent: :destroy
   has_many :services, through: :scheduling_services
 

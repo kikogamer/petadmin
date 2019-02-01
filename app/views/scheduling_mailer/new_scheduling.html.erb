@@ -1,0 +1,16 @@
+<h2>You have a new Service Scheduling</h2>
+<header>
+  <label>Date: </label>
+  <span><%= @scheduling.date %> - <%= @scheduling.time.strftime("at %I:%M%p") %></span>
+</header>
+<div>
+  <h2>Services: </h2>
+  <ul>
+    <%  @scheduling.services.each do | service | %>
+    <li><%=  "#{ service.title } - $ #{ service.price.round(2) }" %></li>
+    <%  end %>
+  </ul>
+</div>
+<footer>
+  Thank You :)
+</footer>

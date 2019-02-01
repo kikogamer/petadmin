@@ -1,0 +1,7 @@
+<%= "New Service Scheduling\n" %>
+<%= "Date: #{ @scheduling.date } - #{ @scheduling.time.strftime("at %I:%M%p") }\n\n"  %>
+<%= "Services: \n" %>
+<%  @scheduling.services.each do | service | %>
+<%=  "    #{ service.title } - $ #{ service.price.round(2) } \n" %>
+<%  end %>
+<%= 'Thank you :)' %>
