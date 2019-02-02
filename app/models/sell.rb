@@ -30,8 +30,12 @@ class Sell < ApplicationRecord
     self.products.each {|p| total += p.price }
     self.services.each {|s| total += s.price }
 
-    if self.discount.present?
-      total = total - self.discount.value
+    if self.discount.present? && self.discount.value > 0
+      if self.discount.value?
+        total = total - self.discount.value        
+      elsif self.discount.percentage? 
+        total = total - (total * (self.discount.value / 100))
+      end
     end
 
     total = (total >= 0)? total : 0
