@@ -15,8 +15,8 @@ class Campaign < ApplicationRecord
 
   def schedule_emails
     Client.all.each do |client|
-      CampaignClient.create(campaign: self, client: client)
-      CampaingJob.perform_later client, self.title, self.body
+      campaign_client = CampaignClient.create(campaign: self, client: client)
+      CampaingJob.perform_later client, self, campaign_client
     end
   end
 
