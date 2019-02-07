@@ -5,6 +5,8 @@ main.content
     thead
       tr
         th Title
+        th.-action-wide Emails Enviados
+        th.-action-wide Emails Lidos
         th.-action-wide Modified
         th.-action data-sorter="false"
 
@@ -13,6 +15,8 @@ main.content
         - @items.each do |item|
           tr id=fae_sort_id(item)
             td = item.title
+            td = item.total_emails
+            td = item.emails_lidos
             td = fae_date_format item.updated_at
             td = fae_delete_button item
       - else

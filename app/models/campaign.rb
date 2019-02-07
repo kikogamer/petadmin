@@ -13,6 +13,14 @@ class Campaign < ApplicationRecord
     title
   end
 
+  def emails_lidos
+    CampaignClient.where(campaign: self, open: true).count
+  end
+
+  def total_emails
+    CampaignClient.where(campaign: self).count
+  end
+
   def schedule_emails
     Client.all.each do |client|
       campaign_client = CampaignClient.create(campaign: self, client: client)
