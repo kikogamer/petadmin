@@ -1,4 +1,4 @@
-<%= @body %>
+<%= @body.html_safe %>
 <% if @token.present? %>
 <img src='<%= "#{ActionMailer::Base.default_url_options[:host]}/campaign_clients/#{@token}/opened" %>' width="1" height="1">
 <% end %>
