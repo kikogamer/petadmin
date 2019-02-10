@@ -1,6 +1,5 @@
 # PetAdmin
-Manage your petshop 
-Get a full administrative control in your petshop.
+Manage your petshop and get a full administrative control in your petshop.
 
 ## Getting Started
 
