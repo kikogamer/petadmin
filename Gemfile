@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'redis'
-gem 'sidekiq'
+gem 'sidekiq', '< 6'
 gem 'fae-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
